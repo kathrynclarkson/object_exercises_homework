@@ -10,9 +10,6 @@
 	<div id="paragraphs"></div>
 
 
-
-
-
 	<script>
 
         // Finish the Following constructor
@@ -74,7 +71,7 @@
 		 	}
 
 		 	this.getLetterCount = function () {
-		 		this.sentenceArray[0].getLetterCount() + this.sentenceArray[1].getLetterCount()
+		 		this.sentenceArray[0].getLetterCount() + this.sentenceArray[1].getLetterCount();
 		 	}
 
 		 	this.getSentenceCount = function () {
@@ -85,7 +82,7 @@
 
 		 	}
 
-		 	this.addToHTML = function() {}
+		 	this.addToHTML = function(id) {}
 
 		 }
 		 // You should be able to
@@ -98,9 +95,8 @@
 		 console.log(p.getWordCount() == 9);
 		 console.log(p.getLetterCount() == 36);
 		 console.log(p.getWordAt(7) == "a");
-
 		 console.log(p.getSentenceCount() == 2);
-		 // p.addToHTML("paragraphs")
+		 p.addToHTML("paragraphs")
 
 
 		</script>
