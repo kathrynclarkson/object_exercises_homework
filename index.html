@@ -24,7 +24,7 @@
         		//find the amount of words in the sentence
 
         		return wordsArray.length
-            }
+        	}
 
         	this.getLetterCount = function() {
         		//find the amount of letters in the sentence
@@ -37,14 +37,19 @@
         		return letters + this.wordsArray.length -1; 
         	}
         	this.reverse = function() {
-				var newArr = [];
+        		var newArr = [];
 
-				for (var i = ; i >)
+				// ["Hello", "I", "Am", "Computer"]
+				// ["Computer", "Am", "I", "Hello"]
 
-
+				for (var i = this.wordsArray.length -1; i >= 0; i--) {
+					newArr.push(this.wordsArray[i]);
+				}
+				this.wordsArray = newArr; 
 			}
 			this.getWordAt = function(i) {
 				//return the word at index i
+				return this.wordsArray[i];
 			}
 		}
 		
@@ -61,27 +66,41 @@
 
 		 // Create a new constructor function for a Paragraph
 
-		 function Paragraph(wordsArray){
-		 	var s2 = new Sentence (["I", "am", "not", "a", "human"]);
-		 	p = new Paragraph([s, s2]);
+		 function Paragraph(sentenceArray){
 
-		 }
-		 this.wordsArray = wordsArray; 
+		 	this.sentenceArray = sentenceArray; 
 
-		 this.getWordCount = function() {
-		 	return wordsArray.length; 
+		 	this.getWordCount = function() {
+		 	}
+
+		 	this.getLetterCount = function () {
+		 		this.sentenceArray[0].getLetterCount() + this.sentenceArray[1].getLetterCount()
+		 	}
+
+		 	this.getSentenceCount = function () {
+		 		return this.sentenceArray.length;
+		 	}
+
+		 	this.getWordAt = function(i) {
+
+		 	}
+
+		 	this.addToHTML = function()
+
 		 }
 		 // You should be able to
-		 // 	var s2 = new Sentence (["I", "am", "not", "a", "human"]);
-		 // 	p = new Paragraph([s, s2]);
+		 var s1 = new Sentence(["Hello", "I", "Am", "Computer"]);
+		 var s2 = new Sentence (["I", "am", "not", "a", "human"]);
+		 p = new Paragraph([s1, s2]);
+
 		 
 		 // Implement the following:
-		 console.log(p.getWordCount() == 5);
-		 console.log(p.getLetterCount() == 16);
-		 console.log(p.getWordAt(10) == " ");
+		 console.log(p.getWordCount() == 9);
+		 console.log(p.getLetterCount() == 36);
+		 console.log(p.getWordAt(7) == "a");
 
-		 console.log(p.getSentenceCount() == 1);
-			// p.addToHTML("paragraphs")
+		 console.log(p.getSentenceCount() == 2);
+		 // p.addToHTML("paragraphs")
 
 
 		</script>
