@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OOP</title>
+</head>
+<body>
+
+	<h1>Introduction to Object Oriented Programming!</h1>
+	<small>Instructions are  in the code! How exciting!</small>
+	<div id="paragraphs"></div>
+
+
+
+
+
+	<script>
+
+        // Finish the Following constructor
+
+        function Sentence(wordsArray) {
+        	this.wordsArray = wordsArray;
+
+        	this.getWordCount = function() {
+        		//find the amount of words in the sentence
+
+        		return wordsArray.length
+            }
+
+        	this.getLetterCount = function() {
+        		//find the amount of letters in the sentence
+        		var letters = 0; 
+
+        		for (var i = 0; i < this.wordsArray.length; i++) {
+        			letters += this.wordsArray[i].length 
+        		}
+        		//the number of spaces will always be the amount of words minus one. 
+        		return letters + this.wordsArray.length -1; 
+        	}
+        	this.reverse = function() {
+				var newArr = [];
+
+				for (var i = ; i >)
+
+
+			}
+			this.getWordAt = function(i) {
+				//return the word at index i
+			}
+		}
+		
+		/* Some Tests. Make them all pass! */
+		
+		var string = new Sentence(["Hello", "I", "Am", "Computer"]);
+		console.log(string.getWordCount() == 4);
+		console.log(string.getLetterCount() == 19); //remember spaces!
+		console.log(string.getWordAt(0) == "Hello");
+		string.reverse()
+		console.log(string.getWordAt(0) == "Computer");
+
+		
+
+		 // Create a new constructor function for a Paragraph
+
+		 function Paragraph(wordsArray){
+		 	var s2 = new Sentence (["I", "am", "not", "a", "human"]);
+		 	p = new Paragraph([s, s2]);
+
+		 }
+		 this.wordsArray = wordsArray; 
+
+		 this.getWordCount = function() {
+		 	return wordsArray.length; 
+		 }
+		 // You should be able to
+		 // 	var s2 = new Sentence (["I", "am", "not", "a", "human"]);
+		 // 	p = new Paragraph([s, s2]);
+		 
+		 // Implement the following:
+		 console.log(p.getWordCount() == 5);
+		 console.log(p.getLetterCount() == 16);
+		 console.log(p.getWordAt(10) == " ");
+
+		 console.log(p.getSentenceCount() == 1);
+			// p.addToHTML("paragraphs")
+
+
+		</script>
+	</body>
+	</html>
+
+
+
+
+
+
+
+
