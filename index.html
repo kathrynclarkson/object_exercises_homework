@@ -48,6 +48,7 @@
 				//return the word at index i
 				return this.wordsArray[i];
 			}
+
 		}
 		
 		/* Some Tests. Make them all pass! */
@@ -68,19 +69,44 @@
 		 	this.sentenceArray = sentenceArray; 
 
 		 	this.getWordCount = function() {
+		 		var total = 0;
+		 		for (var i = 0; i < this.sentenceArray.length; i++){
+		 			total +=this.sentenceArray[i].getWordCount()
+		 		}
+		 		return total;
 		 	}
 
 		 	this.getLetterCount = function () {
-		 		this.sentenceArray[0].getLetterCount() + this.sentenceArray[1].getLetterCount();
+		 		// @TODO: redo this
+		 		var total = 0 
+
+		 		for (var i = 0; i < this.sentenceArray.length; i++) {
+
+		 			total += this.sentenceArray[i].getLetterCount() 
+		 		}
+		 		return total + sentenceArray.length -1;
 		 	}
+
+
 
 		 	this.getSentenceCount = function () {
 		 		return this.sentenceArray.length;
 		 	}
 
-		 	this.getWordAt = function(i) {
+		 	this.getWordAt = function(k) {
+		 		var everything = [];
+		 		for(var i = 0; i < this.sentenceArray.length; i++) {
+		 			for (var j = 0; j<sentenceArray[i].wordsArray.length; j++){
+		 				everything.push(sentenceArray[i].getWordAt(j));
 
+		 			}
+
+
+		 		}
+
+		 		return everything[k];
 		 	}
+
 
 		 	this.addToHTML = function(id) {}
 
